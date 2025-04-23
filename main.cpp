@@ -10,10 +10,8 @@ void merge(int* arr, int l, int m, int r)
 {
 	int nl = m - l + 1;
 	int nr = r - m;
-
 	int* left = new int[nl];
 	int* right = new int[nr];
-
 	for (int i = 0; i < nl; i++)
 		left[i] = arr[l + i];
 	for (int j = 0; j < nr; j++)
@@ -21,7 +19,6 @@ void merge(int* arr, int l, int m, int r)
 
 	int i = 0, j = 0;
 	int k = l;
-
 	while (i < nl && j < nr)
 	{
 		if (left[i] < right[j])
@@ -67,7 +64,7 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");
 	srand(0);
-	int arr_size = 9000000;
+	int arr_size = 50000000;
 	int* arr = new int[arr_size];
 	std::cout << "Создание исходного массива " << std::endl;
 	for (size_t i = 0; i < arr_size; i++)
@@ -95,7 +92,7 @@ int main()
 	flag = true;
 	for (size_t i = 0; i < arr_size; i++)
 	{
-		arr[i] = rand() % 5000;
+		arr[i] = rand() % 50000;
 	}
 	std::cout << "Запуск многопоточной сортировки: " << std::endl;
 	auto _start = std::chrono::high_resolution_clock::now();
