@@ -1,14 +1,11 @@
-﻿
-#include <iostream>
+﻿#include <iostream>
 #include <future>
 #include <chrono>
 #include <thread>
 #include <random>
 #include <ctime>
 
-
 bool flag = false;
-
 void merge(int* arr, int l, int m, int r)
 {
 	int nl = m - l + 1;
@@ -46,7 +43,6 @@ void merge(int* arr, int l, int m, int r)
 	delete[] left;
 	delete[] right;
 }
-
 void mergeSort(int* arr, int l, int r)
 {
 	if (l >= r)
@@ -107,7 +103,6 @@ int main()
 	auto _finish = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> _elapsed = _finish - _start;
 	std::cout << "Время выполнения сортировки: " << _elapsed.count() << " сек." << std::endl;
-
 
 	for (long i = 0; i < arr_size - 1; i++) // Проверка состояния массива:
 	{
